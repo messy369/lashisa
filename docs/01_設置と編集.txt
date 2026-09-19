@@ -1,0 +1,56 @@
+LASHISA 背景更新版・設置と編集
+
+■ファイル構成（site/）
+index.html                 ページ本文
+style.css                  全デザイン・スマホ表示
+app.js                     既存インタラクション
+ guild-hero.png             既存トップビジュアル
+ guild-guide.png            既存Discordガイド
+ office-guild-about.webp    新・会社紹介背景
+ office-guild-gather.webp   新・集会所セクション背景
+ guild-adventure-camp.webp  新・Discord参加バナー背景
+
+■環境
+静的HTML/CSS/JavaScriptです。npm、Node.js、PHP、データベースは不要。
+相対パスのため /lashisa/ 等のサブディレクトリへ配置できます。
+README、docs は担当者向けで、公開先へのアップロードは不要です。
+
+■GitHub Pagesの担当者へ
+公開元ブランチ・フォルダは既存リポジトリのSettings > Pagesに従ってください。
+公開元がルートなら、その直下のindex.htmlと同じ階層に配置します。
+公開元がdocsフォルダなら、そのフォルダの中にsite/の中身を配置します。
+本パッケージ内の説明用docsフォルダと混同しないでください。
+既存のCNAMEやGitHub Actions等の設定ファイルがある場合は、そのまま保持してください。
+
+■変更箇所
+index.html：会社紹介のクラス追加、集会所見出しをgather-sceneで囲む構造追加、CSS/JSの更新識別子。
+style.css：末尾の「2026-09-19: LASHISA office becomes the guild.」以降が今回の変更。
+.about::before：会社紹介画像。位置はbackground-positionで調整。
+.gather-scene::before：集会所画像。スマホ版のトリミングも指定。
+.join-banner::before：冒険拠点画像。
+各 ::after のグラデーションが文字の読みやすさを確保。
+スマホ表示は max-width:680px の指定。
+集会所見出しは今回のみ明朝体に戻し、「何だ。」のアングラ風装飾は維持しています。
+
+■素材について
+事務所の間取り・家具・機材を参照したAIアレンジ画像です。実写の内装そのものではありません。
+ゲーム画像は雰囲気の参考とし、配信用背景は新しく制作しています。
+提供された実写写真やゲームの参考画像そのものは公開用フォルダに含めていません。
+新規画像はWebPとして圧縮済み。Google Fontsは従来どおり外部読込します。
+
+■動作の確認項目
+・PCとスマートフォンで3か所の背景を表示
+・文字とDiscord参加ボタンが読めること
+・職種3タブ、クエスト詳細の開閉
+・会話デモのチャンネル切替・リアクションの追加と取消
+・Discordへの2か所のリンク
+・案内画像の表示と拡大
+・縦長スマホで横方向のはみ出しがないこと
+・画像が404にならないこと
+
+公開先へのアップロードは未実施です。担当者による最終表示確認をお願いします。
+募集条件・給与や応募受付機能は、この更新では追加していません。
+
+■r2追記
+バナー画像は.join-backdropのimg要素に変更。CSSの古い::beforeは無効化しています。
+.guild-featureが添付ガイド画像の表示枠です。#guild-live-demoは会話デモの位置です。
